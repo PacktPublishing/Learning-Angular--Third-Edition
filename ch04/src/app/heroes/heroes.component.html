@@ -1,6 +1,10 @@
 <h3>My heroes</h3>
 <ul>
   <li *ngFor="let hero of heroes; index as myIndex; trackBy: trackByHeroes">
-    {{myIndex+1}}. {{hero.name}}
+    <div [ngSwitch]="hero.team">
+      <div *ngSwitchCase="'avengers'">{{myIndex+1}}. {{hero.name}} is avenger</div>
+      <div *ngSwitchCase="'villains'">{{myIndex+1}}. {{hero.name}} is villain</div>
+      <div *ngSwitchDefault>{{myIndex+1}}. {{hero.name}}</div>
+    </div>
   </li>
 </ul>
