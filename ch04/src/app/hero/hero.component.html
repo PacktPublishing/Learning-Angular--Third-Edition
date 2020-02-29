@@ -1,0 +1,4 @@
+<p *ngIf="name === 'Iron Man'; else noHero">{{name}} hero works!</p>
+<ng-template #noHero>
+  <p>Hero was not found</p>
+</ng-template>
