@@ -1,0 +1,6 @@
+<h3>My heroes</h3>
+<ul>
+  <li *ngFor="let hero of heroes; index as myIndex; trackBy: trackByHeroes">
+    {{myIndex+1}}. {{hero.name}}
+  </li>
+</ul>
