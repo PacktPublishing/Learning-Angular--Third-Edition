@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Hero {
-  id: number;
-  name: string;
-  team: string;
-}
+import { Hero } from '../hero.model';
 
 @Component({
   selector: 'app-heroes',
