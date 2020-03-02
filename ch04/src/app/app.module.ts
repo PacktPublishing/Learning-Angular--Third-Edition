@@ -6,6 +6,7 @@ import { HeroComponent } from './hero/hero.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { SortPipe } from './sort.pipe';
+import { CopyrightDirective } from './copyright.directive';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SortPipe } from './sort.pipe';
     HeroComponent,
     HeroesComponent,
     PipesComponent,
-    SortPipe
+    SortPipe,
+    CopyrightDirective
   ],
   imports: [
     BrowserModule
