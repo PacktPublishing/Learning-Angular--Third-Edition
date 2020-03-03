@@ -8,6 +8,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { SortPipe } from './sort.pipe';
 import { CopyrightDirective } from './copyright.directive';
 import { NumericDirective } from './numeric.directive';
+import { PermissionDirective } from './permission.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NumericDirective } from './numeric.directive';
     PipesComponent,
     SortPipe,
     CopyrightDirective,
-    NumericDirective
+    NumericDirective,
+    PermissionDirective
   ],
   imports: [
     BrowserModule

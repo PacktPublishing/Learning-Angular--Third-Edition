@@ -4,3 +4,6 @@
 <app-pipes></app-pipes>
 <p appCopyright></p>
 <input appNumeric />
+<div *appPermission="['admin', 'agent']">
+  <h3>This area can be accessed by admins and agents only</h3>
+</div>
