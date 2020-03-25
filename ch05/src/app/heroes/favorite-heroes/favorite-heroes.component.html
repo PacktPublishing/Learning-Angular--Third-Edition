@@ -1,0 +1,6 @@
+<h3>My favorite heroes</h3>
+<ul>
+  <li *ngFor="let hero of heroes | slice:0:3">
+    {{hero.name}}
+  </li>
+</ul>

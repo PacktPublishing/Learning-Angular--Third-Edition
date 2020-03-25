@@ -1,6 +1,7 @@
 <h3>My heroes</h3>
 <ul>
   <li *ngFor="let hero of heroes">
-    {{hero.name}}
+    <app-hero-detail [id]="hero.id"></app-hero-detail>
   </li>
 </ul>
+<app-favorite-heroes></app-favorite-heroes>
