@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
-  hero = 'Iron Man';
+  hero = 'Drogfisher';
 
   onLike() {
     window.alert(`I like ${this.hero}`);
+    this.hero = 'Boothstomper';
   }
 }
