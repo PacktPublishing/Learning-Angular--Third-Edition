@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipesComponent implements OnInit {
 
-  heroes = ['Iron Man', 'Thor', 'Hulk', 'Captain America'];
+  heroes = ['Boothstomper', 'Drogfisher', 'Bloodyllips', 'Mr Bu Moverse'];
   today = new Date();
   hero = {
     names: {
-      name: 'Iron Man',
-      realName: 'Tony Stark'
+      name: 'Boothstomper',
+      realName: 'Alfie Best'
     },
     planet: 'Earth',
-    company: 'Stark Industries'
+    color: 'cyan'
   };
 
   constructor() { }
