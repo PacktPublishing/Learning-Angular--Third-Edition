@@ -11,7 +11,7 @@ export class AppComponent {
   title$ = Observable.create(observer => {
     setInterval(() => {
       observer.next();
-    }, 2000)
+    }, 2000);
   });
 
   constructor() {
