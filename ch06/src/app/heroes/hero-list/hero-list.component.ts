@@ -13,8 +13,26 @@ export class HeroListComponent implements OnInit {
 
   constructor(private heroService: HeroService) { }
 
+  add(name: string) {
+    this.heroService.createHero(name).subscribe(hero => this.heroes.push(hero));
+  }
+
   ngOnInit(): void {
     this.getHeroes();
+  }
+
+  rename(hero: Hero) {
+    const existingHero = { id: hero.id, name: 'Pricezog' };
+
+    this.heroService.editHero(hero.id, existingHero).subscribe(() => {
+      this.heroes.find(hero => hero.id).name = 'Pricezog';
+    });
+  }
+
+  remove(hero: Hero) {
+    this.heroService.deleteHero(hero.id).subscribe(() => {
+      this.heroes = this.heroes.filter(selected => selected !== hero);
+    });
   }
 
   private getHeroes() {

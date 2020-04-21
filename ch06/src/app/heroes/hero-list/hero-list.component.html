@@ -4,3 +4,12 @@
     <p>I am hero {{hero.name}} (id: {{hero.id}})</p>
   </li>
 </ul>
+<div>
+  <button (click)="add('Thudread')">Add Thudread</button>
+</div>
+<div>
+  <button (click)="rename(heroes[0])">Rename Boothstomper to Pricezog</button>
+</div>
+<div>
+  <button (click)="remove(heroes[4])">Delete Piranhaelli</button>
+</div>
