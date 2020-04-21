@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { KeyLoggerComponent } from './key-logger/key-logger.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './data.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeroesModule } from './heroes/heroes.module';
+import { AuthInterceptorService } from './auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { HeroesModule } from './heroes/heroes.module';
     HttpClientInMemoryWebApiModule.forRoot(DataService),
     HeroesModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
