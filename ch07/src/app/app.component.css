@@ -1,3 +1,7 @@
 a {
   padding: 10px;
 }
+
+.active {
+  background-color: lightgray;
+}
