@@ -1,1 +1,15 @@
-<p>hero-list works!</p>
+<h3>My heroes</h3>
+<ul>
+  <li *ngFor="let hero of heroes">
+    <a [routerLink]="['/hero', hero.id]">{{hero.name}}</a>
+  </li>
+</ul>
+<div>
+  <button (click)="add('Thudread')">Add Thudread</button>
+</div>
+<div>
+  <button (click)="rename(heroes[0])">Rename Boothstomper to Pricezog</button>
+</div>
+<div>
+  <button (click)="remove(heroes[4])">Delete Piranhaelli</button>
+</div>

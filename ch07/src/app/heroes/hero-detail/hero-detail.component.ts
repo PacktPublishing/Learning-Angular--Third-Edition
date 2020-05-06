@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Hero } from '../hero.model';
+import { HeroService } from '../hero.service';
+import { switchMap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hero-detail',
@@ -7,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroDetailComponent implements OnInit {
 
-  constructor() { }
+  hero: Hero;
+
+  constructor(private route: ActivatedRoute, private heroService: HeroService) { }
 
   ngOnInit(): void {
+    this.route.paramMap.pipe(
+      switchMap((params: ParamMap) => {
+        const id = +params.get('id');
+        return this.heroService.getHero(id);
+      }),
+      map(hero => this.hero = hero)
+    ).subscribe();
   }
 
 }
