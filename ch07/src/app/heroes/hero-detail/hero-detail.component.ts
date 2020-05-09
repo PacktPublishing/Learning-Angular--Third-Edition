@@ -16,10 +16,10 @@ export class HeroDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private heroService: HeroService) { }
 
   ngOnInit(): void {
-    this.getHeroesObs();
+    this.hero = this.route.snapshot.data.hero;
   }
 
-  private getHeroesObs() {
+  private getHeroObs() {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) => {
         const id = +params.get('id');
@@ -29,7 +29,7 @@ export class HeroDetailComponent implements OnInit {
     ).subscribe();
   }
 
-  private getHeroesSnap() {
+  private getHeroSnap() {
     const id = this.route.snapshot.params['id'];
     this.heroService.getHero(id).subscribe(hero => this.hero = hero);
   }

@@ -4,6 +4,7 @@ import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { AuthGuard } from '../auth.guard';
 import { ConfirmGuard } from '../confirm.guard';
+import { HeroDetailResolverService } from './hero-detail-resolver.service';
 
 
 const routes: Routes = [
@@ -12,7 +13,10 @@ const routes: Routes = [
     path: 'hero/:id',
     component: HeroDetailComponent,
     canActivate: [AuthGuard],
-    canDeactivate: [ConfirmGuard]
+    canDeactivate: [ConfirmGuard],
+    resolve: {
+      hero: HeroDetailResolverService
+    }
   },
   { path: '', redirectTo: '/heroes', pathMatch: 'full' }
 ];
@@ -22,3 +26,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class HeroesRoutingModule { }
+
