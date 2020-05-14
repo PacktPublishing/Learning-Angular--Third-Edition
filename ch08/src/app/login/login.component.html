@@ -1,9 +1,10 @@
-<form>
+<form (ngSubmit)="login()">
   <div>
-    <input type="text" placeholder="Username">
+    <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
   </div>
   <div>
-    <input type="password" placeholder="Password">
+    <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
   </div>
   <button type="submit">Login</button>
+  <div>You are trying to login as <b>{{username}}</b></div>
 </form>
