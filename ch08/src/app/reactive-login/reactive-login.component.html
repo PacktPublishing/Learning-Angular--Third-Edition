@@ -1,10 +1,10 @@
 <h3>Reactive forms</h3>
 <form [formGroup]="loginForm" (ngSubmit)="login()">
   <div>
-    <input type="text" name="username" placeholder="Username" formControlName="username">
+    <input type="text" name="username" placeholder="Username" formControlName="username" required>
   </div>
   <div>
-    <input type="password" name="password" placeholder="Password" formControlName="password">
+    <input type="password" name="password" placeholder="Password" formControlName="password" required>
   </div>
   <button type="submit">Login</button>
   <div>You are trying to login as <b>{{this.username.value}}</b></div>
