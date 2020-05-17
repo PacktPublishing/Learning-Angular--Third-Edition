@@ -2,10 +2,13 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()">
   <div>
     <input type="text" name="username" placeholder="Username" formControlName="username" required>
+    <span class="help-block" *ngIf="username.touched && username.invalid">The username is not valid</span>
   </div>
   <div>
     <input type="password" name="password" placeholder="Password" formControlName="password" required>
+    <span class="help-block"*ngIf="password.touched && password.errors?.required">The password is required</span>
+    <span class="help-block"*ngIf="password.touched && password.errors?.minlength">The password is too short</span>
   </div>
-  <button type="submit">Login</button>
+  <button type="submit" [disabled]="!loginForm.valid">Login</button>
   <div>You are trying to login as <b>{{this.username.value}}</b></div>
 </form>

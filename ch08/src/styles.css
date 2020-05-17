@@ -15,10 +15,14 @@ label {
   border: 3px solid lightblue;
 }
 
-.ng-dirty.ng-valid {
+.ng-dirty.ng-valid:not(form) {
   border: 2px solid green;
 }
 
 .ng-dirty.ng-invalid:not(form) {
   border: 2px solid red;
+}
+
+.help-block {
+  color: crimson;
 }
