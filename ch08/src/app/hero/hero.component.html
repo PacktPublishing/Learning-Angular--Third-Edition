@@ -1,0 +1,24 @@
+<h3>Hero details</h3>
+<form [formGroup]="heroDetails">
+  <div>
+    <input type="text" placeholder="Name" formControlName="name">
+  </div>
+  <div>
+    <input type="text" placeholder="Real name" formControlName="realName">
+  </div>
+  <h4>Biometric data</h4>
+  <form formGroupName="biometricData">
+    <div>
+      <label>Age:</label>
+      <input type="number" formControlName="age">
+    </div>
+    <div>
+      <label>Eyes:</label>
+      <input type="color" formControlName="eyes">
+    </div>
+    <div>
+      <label>Hair:</label>
+      <input type="color" formControlName="hair">
+    </div>
+  </form>
+</form>

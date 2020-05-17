@@ -7,6 +7,10 @@ div {
   padding-bottom: 10px;
 }
 
+label {
+  padding-right: 10px;
+}
+
 .ng-touched:not(form) {
   border: 3px solid lightblue;
 }
