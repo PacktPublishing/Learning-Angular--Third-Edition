@@ -21,4 +21,11 @@
       <input type="color" formControlName="hair">
     </div>
   </form>
+  <button (click)="addPower()">Add power</button>
+  <div *ngFor="let power of powers.controls; let i=index">
+    <label>
+      Power:
+      <input type="text" [formControlName]="i">
+    </label>
+  </div>
 </form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-hero',
@@ -8,6 +8,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class HeroComponent implements OnInit {
 
+  get powers(): FormArray {
+    return this.heroDetails.controls.powers as FormArray;
+  }
+
   heroDetails = new FormGroup({
     name: new FormControl(''),
     realName: new FormControl(''),
@@ -15,12 +19,17 @@ export class HeroComponent implements OnInit {
       age: new FormControl(''),
       eyes: new FormControl(''),
       hair: new FormControl('')
-    })
+    }),
+    powers: new FormArray([])
   });
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addPower() {
+    this.powers.push(new FormControl(''));
   }
 
 }
