@@ -2,6 +2,7 @@
 <form [formGroup]="heroDetails">
   <div>
     <input type="text" placeholder="Name" formControlName="name">
+    <span class="help-block" *ngIf="heroDetails.controls.name.hasError('reservedName')">Hero name is already taken</span>
   </div>
   <div>
     <input type="text" placeholder="Real name" formControlName="realName">

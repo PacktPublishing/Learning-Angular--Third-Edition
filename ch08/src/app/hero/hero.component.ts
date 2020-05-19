@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
+import { reservedNameValidator } from '../reserved-name.directive';
 
 @Component({
   selector: 'app-hero',
@@ -13,7 +14,7 @@ export class HeroComponent implements OnInit {
   }
 
   heroDetails = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('', reservedNameValidator()),
     realName: new FormControl(''),
     biometricData: new FormGroup({
       age: new FormControl(''),
