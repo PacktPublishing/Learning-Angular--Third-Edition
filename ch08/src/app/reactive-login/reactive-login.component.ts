@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, AbstractControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, AbstractControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-login',
@@ -24,7 +24,7 @@ export class ReactiveLoginComponent implements OnInit {
     return this.loginForm.controls.password;
   }
 
-  constructor() { }
+  constructor(private builder: FormBuilder) { }
 
   ngOnInit(): void {
   }
@@ -32,5 +32,15 @@ export class ReactiveLoginComponent implements OnInit {
   login() {
     console.log('User: ' + this.username.value);
     console.log('Password: ' + this.password.value);
+  }
+
+  private buildForm() {
+    this.loginForm = this.builder.group({
+      username: ['', Validators.required],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(6)
+      ]]
+    });
   }
 }
