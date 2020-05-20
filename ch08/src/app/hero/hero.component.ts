@@ -33,4 +33,26 @@ export class HeroComponent implements OnInit {
     this.powers.push(new FormControl(''));
   }
 
+  addHero() {
+    this.heroDetails.setValue({
+      name: 'Maleward',
+      realName: 'Agavens Jenmar',
+      biometricData: {
+        age: 30,
+        eyes: '#006400',
+        hair: '#8b4513'
+      },
+      powers: []
+    });
+  }
+
+  addBio() {
+    this.heroDetails.patchValue({
+      biometricData: {
+        age: 35,
+        hair: '#ff0000'
+      },
+    })
+  }
+
 }

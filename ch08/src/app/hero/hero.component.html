@@ -22,6 +22,8 @@
       <input type="color" formControlName="hair">
     </div>
   </form>
+  <button (click)="addHero()">Add hero</button>
+  <button (click)="addBio()">Add biometric</button>
   <button (click)="addPower()">Add power</button>
   <div *ngFor="let power of powers.controls; let i=index">
     <label>
