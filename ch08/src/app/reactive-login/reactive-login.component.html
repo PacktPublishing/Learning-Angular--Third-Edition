@@ -6,8 +6,9 @@
   </div>
   <div>
     <input type="password" name="password" placeholder="Password" formControlName="password" required>
-    <span class="help-block"*ngIf="password.touched && password.errors?.required">The password is required</span>
-    <span class="help-block"*ngIf="password.touched && password.errors?.minlength">The password is too short</span>
+    <span class="help-block" *ngIf="password.touched && password.errors?.required">The password is required</span>
+    <span class="help-block" *ngIf="password.touched && password.errors?.minlength">The password is too short</span>
+    <span *ngIf="showPasswordHint">Password should be minimum six characters long</span>
   </div>
   <button type="submit" [disabled]="!loginForm.valid">Login</button>
   <div>You are trying to login as <b>{{this.username.value}}</b></div>

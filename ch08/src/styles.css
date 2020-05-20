@@ -24,5 +24,6 @@ label {
 }
 
 .help-block {
+  margin: 5px;
   color: crimson;
 }

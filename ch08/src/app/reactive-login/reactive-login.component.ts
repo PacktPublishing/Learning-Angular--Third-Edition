@@ -15,6 +15,7 @@ export class ReactiveLoginComponent implements OnInit {
       Validators.minLength(6)
     ])
   });
+  showPasswordHint: boolean;
 
   get username(): AbstractControl {
     return this.loginForm.controls.username;
@@ -26,7 +27,10 @@ export class ReactiveLoginComponent implements OnInit {
 
   constructor(private builder: FormBuilder) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.password.valueChanges.subscribe((value: string) => {
+      this.showPasswordHint = value.length < 6;
+    });
   }
 
   login() {
