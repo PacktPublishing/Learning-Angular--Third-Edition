@@ -16,3 +16,16 @@
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 </div>
+
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu>
+  <button mat-menu-item>Option A</button>
+  <button mat-menu-item [matMenuTriggerFor]="submenu">Option B</button>
+</mat-menu>
+
+<mat-menu #submenu>
+  <button mat-menu-item>Option B1</button>
+  <button mat-menu-item>Option B2</button>
+</mat-menu>
