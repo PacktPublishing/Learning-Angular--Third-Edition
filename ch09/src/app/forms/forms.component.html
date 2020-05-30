@@ -1,4 +1,18 @@
 <mat-form-field>
-  <input matInput type="text" [formControl]="name" placeholder="Name">
+  <input matInput type="text" [formControl]="name" placeholder="Name" [matAutocomplete]="heroesAuto">
   <mat-error *ngIf="!name.valid">Name is required</mat-error>
 </mat-form-field>
+
+<mat-autocomplete #heroesAuto="matAutocomplete">
+  <mat-option *ngFor="let hero of filteredHeroes$ | async" [value]="hero.name">{{hero.name}}</mat-option>
+</mat-autocomplete>
+
+<mat-checkbox [checked]="isChecked">Check me</mat-checkbox>
+
+<div>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Select a date" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
