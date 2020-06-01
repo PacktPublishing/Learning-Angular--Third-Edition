@@ -16,12 +16,16 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
+import { ListComponent } from './list/list.component';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonsComponent,
-    FormsComponent
+    FormsComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
