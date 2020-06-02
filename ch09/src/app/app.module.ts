@@ -19,13 +19,16 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ListComponent } from './list/list.component';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonsComponent,
     FormsComponent,
-    ListComponent
+    ListComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatNativeDateModule,
     MatMenuModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
