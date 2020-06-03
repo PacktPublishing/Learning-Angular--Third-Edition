@@ -21,6 +21,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
+import { TableComponent } from './table/table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,8 @@ import { DialogComponent } from './dialog/dialog.component';
     ButtonsComponent,
     FormsComponent,
     ListComponent,
-    DialogComponent
+    DialogComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,10 @@ import { DialogComponent } from './dialog/dialog.component';
     MatMenuModule,
     MatListModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
