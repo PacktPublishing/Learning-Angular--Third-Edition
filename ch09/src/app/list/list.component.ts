@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { heroes } from '../heroes';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { Hero } from '../hero.model';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit {
+export class ListComponent {
 
   heroes = heroes;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  reorder(event: CdkDragDrop<Hero[]>) {
+    moveItemInArray(this.heroes, event.previousIndex, event.currentIndex);
   }
 
 }

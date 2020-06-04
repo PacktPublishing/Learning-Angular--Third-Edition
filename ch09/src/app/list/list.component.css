@@ -5,3 +5,8 @@ mat-grid-tile {
 mat-grid-list {
   margin: 20px;
 }
+
+mat-list-item {
+  cursor: move;
+  border: 1px lightgray solid;
+}

@@ -1,5 +1,5 @@
-<mat-list>
-  <mat-list-item *ngFor="let hero of heroes">
+<mat-list cdkDropList (cdkDropListDropped)="reorder($event)">
+  <mat-list-item *ngFor="let hero of heroes" cdkDrag>
     {{hero.name}}
   </mat-list-item>
 </mat-list>
