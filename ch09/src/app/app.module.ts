@@ -28,6 +28,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { CopyTextComponent } from './copy-text/copy-text.component';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexComponent } from './flex/flex.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ListComponent,
     DialogComponent,
     TableComponent,
-    CopyTextComponent
+    CopyTextComponent,
+    FlexComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatPaginatorModule,
     FormsModule,
     ClipboardModule,
-    DragDropModule
+    DragDropModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
