@@ -2,9 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+    <button mat-icon-button [class]="{pulse: isBeating}" color="accent" (click)="isBeating = !isBeating">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isPaused: boolean;
+  isBeating: boolean;
 }
