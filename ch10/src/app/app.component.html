@@ -1,0 +1,6 @@
+<button mat-icon-button [class]="{pulse: !isPaused}">
+  <mat-icon>favorite</mat-icon>
+</button>
+<button mat-stroked-button color="primary" (click)="isPaused = !isPaused">
+  {{isPaused ? 'Start' : 'Stop'}}
+</button>
