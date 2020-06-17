@@ -1,0 +1,9 @@
+<div>
+  <button mat-icon-button (click)="state = 'large'">
+    <mat-icon>zoom_in</mat-icon>
+  </button>
+  <button mat-icon-button (click)="state = 'small'">
+    <mat-icon>zoom_out</mat-icon>
+  </button>
+  <p class="animate" [@sizeAnimation]="state">Hello Angular 9</p>
+</div>
