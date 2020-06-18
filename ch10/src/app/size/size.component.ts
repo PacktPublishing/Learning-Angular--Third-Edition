@@ -22,4 +22,12 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class SizeComponent {
   state: string;
+
+  started(evt: AnimationEvent) {
+    console.log('Animation started');
+  }
+
+  finished(evt: AnimationEvent) {
+    console.log('Animation finished');
+  }
 }

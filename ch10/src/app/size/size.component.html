@@ -5,5 +5,7 @@
   <button mat-icon-button (click)="state = 'small'">
     <mat-icon>zoom_out</mat-icon>
   </button>
-  <p class="animate" [@sizeAnimation]="state">Hello Angular 9</p>
+  <p class="animate" [@sizeAnimation]="state" (@sizeAnimation.start)="started($event)" (@sizeAnimation.done)="finished($event)">
+    Hello Angular 9
+  </p>
 </div>
