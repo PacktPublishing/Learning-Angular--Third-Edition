@@ -7,12 +7,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SizeComponent } from './size/size.component';
 import { InvisibleComponent } from './invisible/invisible.component';
+import { TextResizeComponent } from './text-resize/text-resize.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SizeComponent,
-    InvisibleComponent
+    InvisibleComponent,
+    TextResizeComponent
   ],
   imports: [
     BrowserModule,
