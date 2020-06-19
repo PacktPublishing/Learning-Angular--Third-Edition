@@ -13,7 +13,7 @@ export class TextResizeComponent implements OnInit {
   ngOnInit() {
     const factory = this.builder.build([
       style({ width : '0px' }),
-      animate(1000, style({ width: '100px' }))
+      animate(1000, style({ width: '200px' }))
     ]);
     const textEl = this.el.nativeElement.querySelector('.text');
     const player = factory.create(textEl);

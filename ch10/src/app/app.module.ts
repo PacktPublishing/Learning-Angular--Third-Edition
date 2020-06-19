@@ -8,13 +8,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { SizeComponent } from './size/size.component';
 import { InvisibleComponent } from './invisible/invisible.component';
 import { TextResizeComponent } from './text-resize/text-resize.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SizeComponent,
     InvisibleComponent,
-    TextResizeComponent
+    TextResizeComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
