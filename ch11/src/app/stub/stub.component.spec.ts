@@ -18,7 +18,7 @@ describe('StubComponent', () => {
       providers: [
         { provide: StubService, useValue: serviceStub }
       ]
-    })
+    });
     fixture = TestBed.createComponent(StubComponent);
     component = fixture.componentInstance;
 
