@@ -6,6 +6,7 @@ import { StubComponent } from './stub/stub.component';
 import { SpyComponent } from './spy/spy.component';
 import { AsyncComponent } from './async/async.component';
 import { BindingsComponent } from './bindings/bindings.component';
+import { ListPipe } from './list.pipe';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { BindingsComponent } from './bindings/bindings.component';
     StubComponent,
     SpyComponent,
     AsyncComponent,
-    BindingsComponent
+    BindingsComponent,
+    ListPipe
   ],
   imports: [
     BrowserModule
