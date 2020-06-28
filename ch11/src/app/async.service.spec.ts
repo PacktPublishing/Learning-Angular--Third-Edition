@@ -13,4 +13,16 @@ describe('AsyncService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should set data', () => {
+    const result = service.setData('Fake hero');
+    expect(result.length).toBe(6);
+  });
+
+  it('should get data', (done: DoneFn) => {
+    service.getData().subscribe(heroes => {
+      expect(heroes.length).toBe(5);
+      done();
+    });
+  });
 });
