@@ -10,6 +10,7 @@ import { BindingsComponent } from './bindings/bindings.component';
 import { ListPipe } from './list.pipe';
 import { MenuComponent } from './menu/menu.component';
 import { CopyrightDirective } from './copyright.directive';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CopyrightDirective } from './copyright.directive';
     BindingsComponent,
     ListPipe,
     MenuComponent,
-    CopyrightDirective
+    CopyrightDirective,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
