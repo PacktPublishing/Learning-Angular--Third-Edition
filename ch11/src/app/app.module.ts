@@ -9,6 +9,7 @@ import { AsyncComponent } from './async/async.component';
 import { BindingsComponent } from './bindings/bindings.component';
 import { ListPipe } from './list.pipe';
 import { MenuComponent } from './menu/menu.component';
+import { CopyrightDirective } from './copyright.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MenuComponent } from './menu/menu.component';
     AsyncComponent,
     BindingsComponent,
     ListPipe,
-    MenuComponent
+    MenuComponent,
+    CopyrightDirective
   ],
   imports: [
     BrowserModule,
