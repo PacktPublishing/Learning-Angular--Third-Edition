@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService, RequestInfo, STATUS } from 'angular-in-memory-web-api';
 
-import { Hero } from './hero';
 import { StorageService } from './storage.service';
 
 // Pseudo guid generator
@@ -23,17 +22,32 @@ export class DataService implements InMemoryDbService {
   constructor(private storageService: StorageService) { }
 
   createDb() {
-    this.storageService.set('heroes', []);
+    if (!this.storageService.get('heroes')) {
+      this.storageService.set('heroes', []);
+    }
 
-    return {}
+    return {};
+  }
+
+  get(reqInfo: RequestInfo) {
+    const collection = this.storageService.get(reqInfo.collectionName) as any[];
+    const result = reqInfo.id ? reqInfo.utils.findById(collection, reqInfo.id) : collection;
+
+    return reqInfo.utils.createResponse$(() => {
+      return {
+        body: result,
+        status: STATUS.OK
+      }
+    });
   }
 
   post(reqInfo: RequestInfo) {
-    switch(reqInfo.collectionName) {
-      case 'heroes':
-        this.createHero(reqInfo.utils.getJsonBody(reqInfo.req));
-        break;
-    }
+    const item = reqInfo.utils.getJsonBody(reqInfo.req);
+    item.id = guid();
+
+    const collection = this.storageService.get(reqInfo.collectionName) as any[];
+
+    this.storageService.set(reqInfo.collectionName, [...collection, item]);
 
     return reqInfo.utils.createResponse$(() => {
       return { status: STATUS.OK }
@@ -41,11 +55,11 @@ export class DataService implements InMemoryDbService {
   }
 
   put(reqInfo: RequestInfo) {
-    switch(reqInfo.collectionName) {
-      case 'heroes':
-        this.updateHero(reqInfo.id, reqInfo.utils.getJsonBody(reqInfo.req));
-        break;
-    }
+    const collection = this.storageService.get(reqInfo.collectionName) as any[];
+    const index = collection.findIndex(item => item.id === reqInfo.id);
+    collection[index] = reqInfo.utils.getJsonBody(reqInfo.req);
+
+    this.storageService.set(reqInfo.collectionName, collection);
 
     return reqInfo.utils.createResponse$(() => {
       return { status: STATUS.OK }
@@ -53,28 +67,11 @@ export class DataService implements InMemoryDbService {
   }
 
   delete(reqInfo: RequestInfo) {
-    this.deleteHero(reqInfo.id);
+    const collection = this.storageService.get(reqInfo.collectionName) as any[];
+    this.storageService.set(reqInfo.collectionName, collection.filter(item => item.id !== reqInfo.id));
 
     return reqInfo.utils.createResponse$(() => {
       return { status: STATUS.OK }
     });
-  }
-
-  private createHero(hero: Hero) {
-    const heroes = this.storageService.get<Hero[]>('heroes');
-    hero.id = guid();
-    this.storageService.set<Hero[]>('heroes', [...heroes, hero]);
-  }
-
-  private updateHero(id: string, hero: Hero) {
-    const heroes = this.storageService.get<Hero[]>('heroes');
-    const index = heroes.findIndex(item => item.id === id);
-    heroes[index] = hero;
-    this.storageService.set<Hero[]>('heroes', heroes);
-  }
-
-  private deleteHero(id: string) {
-    const heroes = this.storageService.get<Hero[]>('heroes');
-    this.storageService.set<Hero[]>('heroes', heroes.filter(hero => hero.id !== id));
   }
 }
