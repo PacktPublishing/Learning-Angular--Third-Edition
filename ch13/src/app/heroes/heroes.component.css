@@ -1,0 +1,21 @@
+mat-grid-list {
+  margin: 40px;
+}
+
+mat-grid-tile {
+  background-color: plum;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+mat-drawer {
+  position: fixed;
+  width: 320px;
+}
+
+.mat-drawer-container {
+  background: transparent;
+}

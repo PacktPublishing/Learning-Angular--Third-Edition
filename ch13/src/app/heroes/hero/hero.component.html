@@ -1,0 +1,18 @@
+<form class="form-container" [formGroup]="heroForm" (ngSubmit)="save()">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Alias</mat-label>
+    <input matInput formControlName="alias" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Short bio</mat-label>
+    <textarea matInput formControlName="shortBio"></textarea>
+  </mat-form-field>
+  <div class="form-actions">
+    <a mat-button [routerLink]="['/']">Cancel</a>
+    <button mat-raised-button color="primary" type="submit" [disabled]="heroForm.invalid">Save</button>
+  </div>
+</form>

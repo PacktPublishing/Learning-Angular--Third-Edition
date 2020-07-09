@@ -1,0 +1,23 @@
+<mat-drawer-container fxLayout="column" fxFill>
+  <mat-drawer mode="over" position="end">
+    <mat-tab-group>
+      <mat-tab label="Details">
+        <app-hero-detail [id]="selectedHeroId"></app-hero-detail>
+      </mat-tab>
+      <mat-tab label="Missions"></mat-tab>
+    </mat-tab-group>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-grid-list cols="4" rowHeight="250" gutterSize="10">
+      <mat-grid-tile *ngFor="let hero of heroes$ | async">
+        <h1>{{hero.name}}</h1>
+        <mat-grid-tile-footer>
+          <h3 mat-line>{{hero.alias}}</h3>
+          <button mat-icon-button (click)="selectHero(hero.id)">
+            <mat-icon>info</mat-icon>
+          </button>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-drawer-content>
+</mat-drawer-container>

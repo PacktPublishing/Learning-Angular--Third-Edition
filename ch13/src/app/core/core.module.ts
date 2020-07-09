@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule } from '@angular/router';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppMaterialModule } from '../app-material.module';
@@ -12,7 +13,8 @@ import { HeaderComponent } from './header/header.component';
     AppMaterialModule,
     FlexLayoutModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(DataService)
+    HttpClientInMemoryWebApiModule.forRoot(DataService),
+    RouterModule
   ],
   declarations: [HeaderComponent],
   exports: [HeaderComponent]
