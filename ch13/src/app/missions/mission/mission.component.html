@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Assign a new mission</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="missionForm" (ngSubmit)="save()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Priority</mat-label>
+      <mat-select formControlName="priority">
+        <mat-option *ngFor="let priority of priorities" [value]="priority">{{priority}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-dialog-actions align="end">
+      <a mat-button mat-dialog-close>Cancel</a>
+      <button mat-raised-button color="primary" type="submit" [disabled]="missionForm.invalid">Start mission</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>

@@ -1,5 +1,5 @@
 export interface Mission {
   title: string;
-  country: string;
+  priority: 'low' | 'medium' | 'high';
   completed: boolean;
 }

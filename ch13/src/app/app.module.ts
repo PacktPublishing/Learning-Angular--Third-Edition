@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HeroesModule } from './heroes/heroes.module';
+import { MissionsModule } from './missions/missions.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HeroesModule } from './heroes/heroes.module';
     CoreModule,
     FlexLayoutModule,
     HeroesModule,
+    MissionsModule,
     AppRoutingModule
   ],
   providers: [],

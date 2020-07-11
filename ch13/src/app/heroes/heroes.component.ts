@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 
-import { Hero } from './hero';
+import { Hero } from '../core/hero';
 import { HeroService } from './heroes.service';
 
 @Component({

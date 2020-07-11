@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
-import { Hero } from '../hero';
+import { Hero } from '../../core/hero';
+import { MissionComponent } from '../../missions/mission/mission.component';
 import { HeroService } from '../heroes.service';
 
 @Component({
@@ -13,7 +15,11 @@ export class HeroDetailComponent implements OnChanges {
   @Output() delete = new EventEmitter();
   hero: Hero;
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private dialog: MatDialog) { }
+
+  assignMission() {
+    this.dialog.open(MissionComponent, { data: this.hero });
+  }
 
   deleteHero() {
     this.heroService.deleteHero(this.hero.id).subscribe(() => this.delete.emit());
