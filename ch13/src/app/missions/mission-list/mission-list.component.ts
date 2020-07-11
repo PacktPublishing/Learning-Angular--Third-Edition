@@ -1,15 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Hero } from '../../core/hero';
+import { Mission } from '../../core/mission';
+import { MissionService } from '../missions.service';
 
 @Component({
   selector: 'app-mission-list',
-  templateUrl: './mission-list.component.html',
-  styleUrls: ['./mission-list.component.css']
+  templateUrl: './mission-list.component.html'
 })
 export class MissionListComponent implements OnInit {
 
-  constructor() { }
+  @Input() hero: Hero;
 
-  ngOnInit(): void {
+  constructor(public missionService: MissionService) { }
+
+  completeMission(mission: Mission) {
+    this.missionService.completeMission(mission, this.hero).subscribe(() => {
+      this.hero.missions = this.hero.missions.filter(m => m !== mission);
+    });
+  }
+
+  getPriorityColor(mission: Mission): string {
+    switch(mission.priority) {
+      case 'medium':
+        return 'yellow';
+      case 'high':
+        return 'red';
+    }
+  }
+
+  ngOnInit() {
+    this.missionService.missionAdded$.subscribe(mission => {
+      if (!this.hero.missions) {
+        this.hero.missions = [];
+      }
+      this.hero.missions.push(mission);
+    });
   }
 
 }

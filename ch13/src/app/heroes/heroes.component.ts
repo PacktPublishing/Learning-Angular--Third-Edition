@@ -12,7 +12,7 @@ import { HeroService } from './heroes.service';
 export class HeroesComponent implements OnInit {
 
   heroes: Hero[];
-  selectedHeroId: string;
+  selectedHero: Hero;
 
   @ViewChild(MatDrawer) private drawer: MatDrawer;
 
@@ -27,8 +27,8 @@ export class HeroesComponent implements OnInit {
     this.drawer.close();
   }
 
-  selectHero(heroId: string) {
-    this.selectedHeroId = heroId;
+  selectHero(hero: Hero) {
+    this.selectedHero = hero;
     this.drawer.open();
   }
 

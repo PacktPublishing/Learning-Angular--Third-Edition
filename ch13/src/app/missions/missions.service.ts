@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Hero } from '../core/hero';
 import { Mission } from '../core/mission';
@@ -9,6 +10,9 @@ import { Mission } from '../core/mission';
   providedIn: 'root'
 })
 export class MissionService {
+
+  private missionAddedSource = new Subject<Mission>();
+  missionAdded$ = this.missionAddedSource.asObservable();
 
   private missionsUrl;
 
@@ -22,6 +26,13 @@ export class MissionService {
     }
     hero.missions.push(mission);
 
+    return this.http.put<Hero>(`${this.missionsUrl}/${hero.id}`, hero).pipe(
+      map(() => this.missionAddedSource.next(mission))
+    );
+  }
+
+  completeMission(mission: Mission, hero: Hero): Observable<any> {
+    hero.missions = hero.missions.filter(m => m !== mission);
     return this.http.put<Hero>(`${this.missionsUrl}/${hero.id}`, hero);
   }
 

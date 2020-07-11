@@ -2,9 +2,11 @@
   <mat-drawer mode="over" position="end">
     <mat-tab-group>
       <mat-tab label="Details">
-        <app-hero-detail [id]="selectedHeroId" (delete)="onHeroDeleted()"></app-hero-detail>
+        <app-hero-detail [id]="selectedHero?.id" (delete)="onHeroDeleted()"></app-hero-detail>
       </mat-tab>
-      <mat-tab label="Missions"></mat-tab>
+      <mat-tab label="Missions">
+        <app-mission-list *ngIf="selectedHero" [hero]="selectedHero"></app-mission-list>
+      </mat-tab>
     </mat-tab-group>
   </mat-drawer>
   <mat-drawer-content>
@@ -13,7 +15,7 @@
         <h1>{{hero.name}}</h1>
         <mat-grid-tile-footer>
           <h3 mat-line>{{hero.alias}}</h3>
-          <button mat-icon-button (click)="selectHero(hero.id)">
+          <button mat-icon-button (click)="selectHero(hero)">
             <mat-icon>info</mat-icon>
           </button>
         </mat-grid-tile-footer>
