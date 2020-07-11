@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../heroes.service';
@@ -10,9 +10,14 @@ import { HeroService } from '../heroes.service';
 export class HeroDetailComponent implements OnChanges {
 
   @Input() id: string;
+  @Output() delete = new EventEmitter();
   hero: Hero;
 
   constructor(private heroService: HeroService) { }
+
+  deleteHero() {
+    this.heroService.deleteHero(this.hero.id).subscribe(() => this.delete.emit());
+  }
 
   ngOnChanges(){
     this.hero = null;

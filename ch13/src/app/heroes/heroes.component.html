@@ -2,14 +2,14 @@
   <mat-drawer mode="over" position="end">
     <mat-tab-group>
       <mat-tab label="Details">
-        <app-hero-detail [id]="selectedHeroId"></app-hero-detail>
+        <app-hero-detail [id]="selectedHeroId" (delete)="onHeroDeleted()"></app-hero-detail>
       </mat-tab>
       <mat-tab label="Missions"></mat-tab>
     </mat-tab-group>
   </mat-drawer>
   <mat-drawer-content>
     <mat-grid-list cols="4" rowHeight="250" gutterSize="10">
-      <mat-grid-tile *ngFor="let hero of heroes$ | async">
+      <mat-grid-tile *ngFor="let hero of heroes">
         <h1>{{hero.name}}</h1>
         <mat-grid-tile-footer>
           <h3 mat-line>{{hero.alias}}</h3>

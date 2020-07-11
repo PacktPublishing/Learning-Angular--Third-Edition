@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { Observable } from 'rxjs';
 
 import { Hero } from './hero';
 import { HeroService } from './heroes.service';
@@ -12,7 +11,7 @@ import { HeroService } from './heroes.service';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes$: Observable<Hero[]>;
+  heroes: Hero[];
   selectedHeroId: string;
 
   @ViewChild(MatDrawer) private drawer: MatDrawer;
@@ -20,12 +19,21 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    this.heroes$ = this.heroService.getHeroes();
+    this.getHeroes();
+  }
+
+  onHeroDeleted() {
+    this.getHeroes();
+    this.drawer.close();
   }
 
   selectHero(heroId: string) {
     this.selectedHeroId = heroId;
     this.drawer.open();
+  }
+
+  private getHeroes() {
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
 }
