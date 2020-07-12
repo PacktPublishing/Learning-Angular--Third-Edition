@@ -12,7 +12,7 @@ import { Mission } from '../core/mission';
 export class MissionService {
 
   private missionAddedSource = new Subject<Mission>();
-  missionAdded$ = this.missionAddedSource.asObservable();
+  readonly missionAdded$ = this.missionAddedSource.asObservable();
 
   private missionsUrl;
 
