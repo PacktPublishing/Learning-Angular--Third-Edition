@@ -20,7 +20,7 @@ export class AppComponent {
 
   private setTitle = () => {
     const timestamp = new Date().getMilliseconds();
-    this.title = `Hello Angular 9 (${timestamp})`;
+    this.title = `Hello Angular 10 (${timestamp})`;
   }
 
   private changeTitle(callback) {
