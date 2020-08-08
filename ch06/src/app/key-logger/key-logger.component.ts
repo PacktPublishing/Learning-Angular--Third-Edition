@@ -9,7 +9,7 @@ import { tap, map, filter } from 'rxjs/operators';
 })
 export class KeyLoggerComponent implements OnInit {
 
-  keys: string = '';
+  keys = '';
   @Input() numeric: boolean;
   @ViewChild('keyContainer', {static: true}) input: ElementRef;
 
@@ -21,11 +21,11 @@ export class KeyLoggerComponent implements OnInit {
       map((evt: KeyboardEvent) => evt.key.charCodeAt(0)),
       filter(code => {
         if (this.numeric) {
-          return !(code > 31 && (code < 48 || code > 57))
+          return !(code > 31 && (code < 48 || code > 57));
         }
         return true;
       }),
-      tap(number => this.keys += String.fromCharCode(number))
+      tap(digit => this.keys += String.fromCharCode(digit))
     ).subscribe();
   }
 }

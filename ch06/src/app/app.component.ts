@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'my-app';
-  title$ = Observable.create(observer => {
+  title$ = new Observable(observer => {
     setInterval(() => {
       observer.next();
     }, 2000);
