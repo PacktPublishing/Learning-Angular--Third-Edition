@@ -13,7 +13,7 @@ export class HeroDetailResolverService implements Resolve<Hero> {
   constructor(private heroService: HeroService) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Hero> {
-    let id = +route.paramMap.get('id');
+    const id = +route.paramMap.get('id');
 
     return this.heroService.getHero(id).pipe(
       take(1),
