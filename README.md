@@ -1,6 +1,6 @@
 # Learning Angular - Third Edition
 
-<a href="https://www.packtpub.com/product/learning-angular-10-third-edition/9781839210662?utm_source=github&utm_medium=repository&utm_campaign=9781839210662"><img src="https://static.packt-cdn.com/products/9781839210662/cover/smaller" alt="Learning Angular - Third Edition" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/product/learning-angular-10-third-edition/9781839210662?utm_source=github&utm_medium=repository&utm_campaign=9781839210662"><img src="https://github.com/PacktPublishing/Learning-Angular--Third-Edition/raw/master/Book%20Cover%20for%20Learning%20Angular%20-%20Third%20Edition.jpg" alt="Learning Angular - Third Edition" height="256px" align="right"></a>
 
 This is the code repository for [Learning Angular - Third Edition](https://www.packtpub.com/product/learning-angular-10-third-edition/9781839210662?utm_source=github&utm_medium=repository&utm_campaign=9781839210662), published by Packt.
 
