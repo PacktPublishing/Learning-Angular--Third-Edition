@@ -1,3 +1,8 @@
+## $5 Tech Unlocked 2021!
+[Buy and download this Book for only $5 on PacktPub.com](https://www.packtpub.com/product/learning-angular-third-edition/9781839210662)
+-----
+*If you have read this book, please leave a review on [Amazon.com](https://www.amazon.com/gp/product/1839210664).     Potential readers can then use your unbiased opinion to help them make purchase decisions. Thank you. The $5 campaign         runs from __December 15th 2020__ to __January 13th 2021.__*
+
 # Learning Angular - Third Edition
 
 <a href="https://www.packtpub.com/product/learning-angular-10-third-edition/9781839210662?utm_source=github&utm_medium=repository&utm_campaign=9781839210662"><img src="https://github.com/PacktPublishing/Learning-Angular--Third-Edition/raw/master/Book%20Cover%20for%20Learning%20Angular%20-%20Third%20Edition.jpg" alt="Learning Angular - Third Edition" height="256px" align="right"></a>
