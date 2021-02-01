@@ -25,7 +25,7 @@
   <button (click)="addHero()">Add hero</button>
   <button (click)="addBio()">Add biometric</button>
   <button (click)="addPower()">Add power</button>
-  <div *ngFor="let power of powers.controls; let i=index">
+  <div formArrayName="powers" *ngFor="let power of powers.controls; let i=index">
     <label>
       Power:
       <input type="text" [formControlName]="i">
