@@ -60,7 +60,7 @@ With the following software and hardware list you can run all code files present
 * Page 54 (code snippet line 2 and 3): **let propertyValue: string = this[key];** _should be_ **let propertyValue: string = target[key];** and **if (delete this[key]) {** _should be_ **if (delete target[key]) {**
 * Page 55 (code snippet line 3 and 4): **let propertyValue: string = this[key];** _should be_ **let propertyValue: string = target[key];** and **if (delete this[key]) {** _should be_ **if (delete target[key]) {**
 * Page 12 (code snippet line 1): **import { Component } from ‹@angular/core›;** _should be_ **import { Component } from '@angular/core';** 
-* Page 250, step 5 (code snippet line 1): **<div *ngFor="let power of powers.controls; let i=index">** _should be_ **<div formArrayName="powers" *ngFor="let power of powers.controls; let i=index">**
+* Page 250, step 5 (code snippet line 1): <div *ngFor="let power of powers.controls; let i=index"> _should be_ <div formArrayName="powers" *ngFor="let power of powers.controls; let i=index">
 
 ### Related products <Other books you may enjoy>
 * Angular for Enterprise-Ready Web Applications - Second Edition [[Packt]](https://www.packtpub.com/product/angular-for-enterprise-ready-web-applications-second-edition/9781838648800?utm_source=github&utm_medium=repository&utm_campaign=9781838648800) [[Amazon]](https://www.amazon.com/dp/1838648801)
