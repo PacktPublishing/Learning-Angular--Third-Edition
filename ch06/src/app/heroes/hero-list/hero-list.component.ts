@@ -25,7 +25,7 @@ export class HeroListComponent implements OnInit {
     const existingHero = { id: hero.id, name: 'Pricezog' };
 
     this.heroService.editHero(hero.id, existingHero).subscribe(() => {
-      this.heroes.find(hero => hero.id).name = 'Pricezog';
+      this.heroes.find(hero => hero.id == existingHero.id).name = 'Pricezog';
     });
   }
 
